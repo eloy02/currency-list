@@ -120,6 +120,9 @@ namespace CurrencyApp
         {
             services.AddSingleton<MainWindowViewModel>();
             services.AddSingleton<IViewFor<MainWindowViewModel>, MainWindow>();
+
+            services.AddTransient<HomeViewModel>();
+            services.AddTransient<IViewFor<HomeViewModel>, HomeView>();
         }
 
         private async void Application_Startup(object sender, StartupEventArgs e)
