@@ -7,7 +7,7 @@ namespace CurrencyApp.Jobs.XML
     {
         public static T? ParseXml<T>(string xmlString) where T : class
         {
-            var reader = XmlReader.Create(xmlString.Trim(), new XmlReaderSettings() { ConformanceLevel = ConformanceLevel.Document });
+            var reader = XmlReader.Create(xmlString, new XmlReaderSettings() { ConformanceLevel = ConformanceLevel.Auto });
             return new XmlSerializer(typeof(T)).Deserialize(reader) as T;
         }
     }
