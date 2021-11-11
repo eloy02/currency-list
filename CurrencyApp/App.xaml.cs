@@ -82,7 +82,7 @@ namespace CurrencyApp
 
         private void ConfigureEntityFramework(IServiceCollection services)
         {
-            services.AddDbContext<CurrencyContext>(opt => opt.UseSqlite("Filename=app.db")); // TODO get value from config
+            services.AddDbContext<CurrencyContext>(opt => opt.UseSqlite(Configuration.GetConnectionString("FileDatabase")));
         }
 
         private void ConfigureQuartz(IServiceCollection services)
@@ -99,14 +99,14 @@ namespace CurrencyApp
                 q.AddTrigger(opts => opts
                     .ForJob(currencyJobKey)
                     .WithIdentity($"{currencyJobKey}-trigger")
-                    .WithCronSchedule("10 * * * * ?")); // TODO get value from config
+                    .WithCronSchedule(Configuration[$"Quartz:{currencyJobKey}"]));
 
                 q.AddJob<LoadCurrencyRatesJob>(opt => opt.WithIdentity(ratesJobKey));
 
                 q.AddTrigger(opts => opts
                     .ForJob(ratesJobKey)
                     .WithIdentity($"{ratesJobKey}-trigger")
-                    .WithCronSchedule("30 * * * * ?")); // TODO get value from config
+                    .WithCronSchedule(Configuration[$"Quartz:{ratesJobKey}"]));
             });
 
             services.AddQuartzHostedService(options =>

@@ -1,3 +1,10 @@
 {
+  "Quartz": {
+    "LoadCurrencyJob": "30 * * * * ?",
+    "LoadCurrencyRatesJob": "5 * * * * ?"
+  },
 
+  "ConnectionStrings": {
+    "FileDatabase": "Filename=app.db"
+  }
 }
