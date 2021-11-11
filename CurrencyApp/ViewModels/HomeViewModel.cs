@@ -15,6 +15,8 @@ namespace CurrencyApp.ViewModels
 {
     public class HomeViewModel : ReactiveObject, IActivatableViewModel, IRoutableViewModel
     {
+        private const string USD_ISO = "USD";
+
         private readonly IMediator _mediator;
 
         public ViewModelActivator Activator { get; }
@@ -62,6 +64,13 @@ namespace CurrencyApp.ViewModels
                 GetCurrencyRate
                     .ObserveOn(RxApp.MainThreadScheduler)
                     .Subscribe(x => CurrencyRate = x)
+                    .DisposeWith(disposables);
+
+                this.WhenAnyValue(x => x.Currencies)
+                    .Where(x => x.Count > 0)
+                    .Select(x => x.SingleOrDefault(c => c.ISOCode == USD_ISO))
+                    .ObserveOn(RxApp.MainThreadScheduler)
+                    .Subscribe(x => SelectedCurrency = x)
                     .DisposeWith(disposables);
 
                 this.WhenAnyValue(x => x.SelectedCurrency)
