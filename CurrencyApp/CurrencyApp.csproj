@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="ConfigureAwait.Fody" Version="3.3.1" />
     <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,13 +20,25 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
     <PackageReference Include="Quartz" Version="3.3.3" />
+    <PackageReference Include="Quartz.Extensions.Hosting" Version="3.3.3" />
     <PackageReference Include="ReactiveUI.Fody" Version="16.3.10" />
     <PackageReference Include="ReactiveUI.WPF" Version="16.3.10" />
+    <PackageReference Include="Splat" Version="13.1.42" />
+    <PackageReference Include="Splat.Microsoft.Extensions.DependencyInjection" Version="13.1.42" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="configuration.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
