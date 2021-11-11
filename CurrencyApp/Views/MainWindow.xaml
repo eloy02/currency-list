@@ -14,15 +14,15 @@
     mc:Ignorable="d">
 
     <Grid>
-        <dxwui:HamburgerMenu>
-            <dxwui:HamburgerMenuNavigationButton x:Name="HomeNav" Content="Главная" />
-            <dxwui:HamburgerMenuNavigationButton x:Name="CurRatesNav" Content="Список курсов валют" />
-        </dxwui:HamburgerMenu>
-
         <reactiveUi:RoutedViewHost
             x:Name="Router"
             Grid.Row="0"
             Grid.Column="1"
             Margin="50,0,0,0" />
+
+        <dxwui:HamburgerMenu>
+            <dxwui:HamburgerMenuNavigationButton x:Name="HomeNav" Content="Главная" />
+            <dxwui:HamburgerMenuNavigationButton x:Name="CurRatesNav" Content="Список курсов валют" />
+        </dxwui:HamburgerMenu>
     </Grid>
 </dx:ThemedWindow>
