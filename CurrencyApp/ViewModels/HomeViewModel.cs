@@ -76,6 +76,8 @@ namespace CurrencyApp.ViewModels
                     .ObserveOn(RxApp.MainThreadScheduler)
                     .Subscribe(x => IsLoading = x)
                     .DisposeWith(disposables);
+
+                GetCurrencies.Execute().Subscribe();
             });
         }
 
