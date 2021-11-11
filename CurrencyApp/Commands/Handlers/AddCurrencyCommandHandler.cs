@@ -26,6 +26,7 @@ namespace CurrencyApp.Commands.Handlers
                 EngName = request.EngName,
                 Nominal = request.Nominal,
                 ParentCode = request.ParentCode,
+                ISOCode = request.ISOCode,
             };
 
             context.Currencies.Add(currency);
