@@ -123,6 +123,9 @@ namespace CurrencyApp
 
             services.AddTransient<HomeViewModel>();
             services.AddTransient<IViewFor<HomeViewModel>, HomeView>();
+
+            services.AddTransient<CurrencyRateViewModel>();
+            services.AddTransient<IViewFor<CurrencyRateViewModel>, CurrencyRateView>();
         }
 
         private async void Application_Startup(object sender, StartupEventArgs e)
