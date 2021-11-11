@@ -34,6 +34,9 @@ namespace CurrencyApp.Database
                 ent.Property(e => e.ParentCode)
                     .HasMaxLength(10);
 
+                ent.Property(e => e.ISOCode)
+                    .HasMaxLength(10);
+
                 ent.HasMany(e => e.Rates).WithOne(r => r.Currency);
             });
 

@@ -12,6 +12,8 @@ namespace CurrencyApp.Model
         public string? EngName { get; set; }
         public int Nominal { get; set; }
         public string ParentCode { get; set; }
+        public string ISOCode { get; set; }
+
         public List<CurrencyRate> Rates { get; set; }
     }
 }

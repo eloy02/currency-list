@@ -55,6 +55,10 @@
 
         private string parentCodeField;
 
+        private string iSO_Num_CodeField;
+
+        private string iSO_Char_CodeField;
+
         private string idField;
 
         /// <remarks/>
@@ -106,6 +110,32 @@
             set
             {
                 parentCodeField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string ISO_Num_Code
+        {
+            get
+            {
+                return iSO_Num_CodeField;
+            }
+            set
+            {
+                iSO_Num_CodeField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string ISO_Char_Code
+        {
+            get
+            {
+                return iSO_Char_CodeField;
+            }
+            set
+            {
+                iSO_Char_CodeField = value;
             }
         }
 

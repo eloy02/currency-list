@@ -37,7 +37,14 @@ namespace CurrencyApp.Jobs
 
             foreach (var val in valuta.Item)
             {
-                await _mediator.Send(new AddCurrencyCommand(val.ID, val.Name, val.EngName, Convert.ToInt32(val.Nominal), val.ParentCode));
+                await _mediator.Send(
+                    new AddCurrencyCommand(
+                        val.ID,
+                        val.Name,
+                        val.EngName,
+                        Convert.ToInt32(val.Nominal),
+                        val.ParentCode,
+                        val.ISO_Char_Code));
             }
         }
     }
