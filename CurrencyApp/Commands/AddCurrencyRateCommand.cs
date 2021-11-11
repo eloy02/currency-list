@@ -6,13 +6,13 @@ namespace CurrencyApp.Commands
     internal class AddCurrencyRateCommand : IRequest
     {
         public string CurrencyId { get; set; }
-        public decimal Nominal { get; set; }
+        public decimal Value { get; set; }
         public DateTimeOffset CurrencyDate { get; set; }
 
-        public AddCurrencyRateCommand(string currencyId, decimal nominal, DateTimeOffset currencyDate)
+        public AddCurrencyRateCommand(string currencyId, decimal value, DateTimeOffset currencyDate)
         {
             CurrencyId = currencyId;
-            Nominal = nominal;
+            Value = value;
             CurrencyDate = currencyDate;
         }
     }

@@ -5,10 +5,13 @@ namespace CurrencyApp.Model
     /// <summary>
     /// Валюта
     /// </summary>
-    /// <param name="Id"></param>
-    /// <param name="Name"></param>
-    /// <param name="EngName"></param>
-    /// <param name="Nominal"></param>
-    /// <param name="ParentCode"></param>
-    public sealed record Currency(string Id, string Name, string? EngName, int Nominal, string ParentCode, List<CurrencyRate> Rates);
+    public sealed class Currency
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string? EngName { get; set; }
+        public int Nominal { get; set; }
+        public string ParentCode { get; set; }
+        public List<CurrencyRate> Rates { get; set; }
+    }
 }

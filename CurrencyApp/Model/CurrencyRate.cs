@@ -5,8 +5,13 @@ namespace CurrencyApp.Model
     /// <summary>
     /// Курс валюты
     /// </summary>
-    /// <param name="Currency">Валюта</param>
-    /// <param name="Value"></param>
-    /// <param name="LastUpdateDate"></param>
-    public sealed record CurrencyRate(Guid Id, Currency Currency, decimal Value, DateTimeOffset LastUpdateDate, string CurrencyId);
+    public sealed class CurrencyRate
+    {
+        public Guid Id { get; set; }
+        public decimal Value { get; set; }
+        public DateTimeOffset LastUpdateDate { get; set; }
+
+        public Currency Currency { get; set; }
+        public string CurrencyId { get; set; }
+    }
 }

@@ -13,7 +13,7 @@ namespace CurrencyApp.Jobs
     /// Задание загрузки котировок валют
     /// </summary>
     [ConfigureAwait(false)]
-    internal class LoadCurrencyRatesJob : IJob
+    internal sealed class LoadCurrencyRatesJob : IJob
     {
         private const string Url = "https://www.cbr.ru/scripts/XML_daily.asp";
 
