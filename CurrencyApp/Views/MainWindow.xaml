@@ -15,8 +15,8 @@
 
     <Grid>
         <dxwui:HamburgerMenu>
-            <dxwui:HamburgerMenuNavigationButton Name="HomeNav" Content="Главная" />
-            <dxwui:HamburgerMenuNavigationButton Name="CurRatesNav" Content="Список курсов валют" />
+            <dxwui:HamburgerMenuNavigationButton x:Name="HomeNav" Content="Главная" />
+            <dxwui:HamburgerMenuNavigationButton x:Name="CurRatesNav" Content="Список курсов валют" />
         </dxwui:HamburgerMenu>
 
         <reactiveUi:RoutedViewHost
