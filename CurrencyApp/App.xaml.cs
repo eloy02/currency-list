@@ -5,6 +5,8 @@ using System.Text;
 using System.Windows;
 using CurrencyApp.Database;
 using CurrencyApp.Jobs;
+using CurrencyApp.ViewModels;
+using CurrencyApp.Views;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -57,6 +59,7 @@ namespace CurrencyApp
                   ConfigureEntityFramework(services);
                   ConfigureServices(services);
                   ConfigureQuartz(services);
+                  RegisterViewModels(services);
               })
               //.UseEnvironment(Environments.Development)
               .Build();
@@ -65,14 +68,6 @@ namespace CurrencyApp
             // we need to re-register the built container with Splat again
             Container = _host.Services;
             Container.UseMicrosoftDependencyResolver();
-        }
-
-        private async void Application_Startup(object sender, StartupEventArgs e)
-        {
-            await _host.StartAsync();
-
-            var mainWindow = _host.Services.GetService<MainWindow>();
-            mainWindow.Show();
         }
 
         private void ConfigureMediatR(IServiceCollection services)
@@ -119,6 +114,20 @@ namespace CurrencyApp
                 // when shutting down we want jobs to complete gracefully
                 options.WaitForJobsToComplete = true;
             });
+        }
+
+        private void RegisterViewModels(IServiceCollection services)
+        {
+            services.AddSingleton<MainWindowViewModel>();
+            services.AddSingleton<IViewFor<MainWindowViewModel>, MainWindow>();
+        }
+
+        private async void Application_Startup(object sender, StartupEventArgs e)
+        {
+            await _host.StartAsync();
+
+            var mainWindow = _host.Services.GetService<MainWindow>();
+            mainWindow.Show();
         }
 
         private async void Application_Exit(object sender, ExitEventArgs e)

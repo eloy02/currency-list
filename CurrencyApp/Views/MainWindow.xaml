@@ -1,0 +1,28 @@
+﻿<dx:ThemedWindow
+    x:Class="CurrencyApp.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+    xmlns:local="clr-namespace:CurrencyApp.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:reactiveUi="http://reactiveui.net"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+
+    <Grid>
+        <dxwui:HamburgerMenu>
+            <dxwui:HamburgerMenuNavigationButton Name="HomeNav" Content="Главная" />
+            <dxwui:HamburgerMenuNavigationButton Name="CurRatesNav" Content="Список курсов валют" />
+        </dxwui:HamburgerMenu>
+
+        <reactiveUi:RoutedViewHost
+            x:Name="Router"
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="5,0,0,0" />
+    </Grid>
+</dx:ThemedWindow>
