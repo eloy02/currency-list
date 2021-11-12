@@ -52,8 +52,6 @@ namespace CurrencyApp
                   resolver.InitializeSplat();
                   resolver.InitializeReactiveUI();
 
-                  services.AddSingleton<MainWindow>();
-
                   // Configure our local services and access the host configuration
                   ConfigureMediatR(services);
                   ConfigureEntityFramework(services);
@@ -132,7 +130,7 @@ namespace CurrencyApp
         {
             await _host.StartAsync();
 
-            var mainWindow = _host.Services.GetService<MainWindow>();
+            var mainWindow = _host.Services.GetService<IViewFor<MainWindowViewModel>>() as MainWindow;
             mainWindow.Show();
         }
 
