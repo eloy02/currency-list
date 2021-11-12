@@ -2,7 +2,7 @@
 using CurrencyApp.Model;
 using MediatR;
 
-namespace CurrencyApp.Queries.Handlers
+namespace CurrencyApp.Queries
 {
     /// <summary>
     /// Запрос котировок валют

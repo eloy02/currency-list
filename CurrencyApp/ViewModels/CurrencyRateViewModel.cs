@@ -5,7 +5,7 @@ using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using CurrencyApp.Model;
-using CurrencyApp.Queries.Handlers;
+using CurrencyApp.Queries;
 using DynamicData;
 using MediatR;
 using ReactiveUI;
