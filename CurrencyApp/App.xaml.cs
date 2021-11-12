@@ -40,7 +40,7 @@ namespace CurrencyApp
 
             Configuration = new ConfigurationBuilder()
                  .SetBasePath(Directory.GetCurrentDirectory())
-                 .AddJsonFile("configuration.json", optional: false, reloadOnChange: true)
+                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                  .Build();
 
             _host = Host
